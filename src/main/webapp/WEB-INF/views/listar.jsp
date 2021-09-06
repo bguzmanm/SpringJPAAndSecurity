@@ -12,7 +12,7 @@
 	<div class="container">
 	<h1>Listado de Empleado</h1>
 	
-	
+		<a href="${pageContext.request.contextPath}/logout">Salir</a>
 		<table class="table">
 			<thead class="table-dark">
 				<tr>
