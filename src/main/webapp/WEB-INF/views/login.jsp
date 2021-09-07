@@ -16,7 +16,7 @@
 			out.println("<h3>ERROR DE AUTENTICACIÓN<h3>");
 		}
 	%>
-	<form action="#" name="loginForm" method="post">
+	<form action="${pageContext.request.contextPath}/login" name="loginForm" method="post">
 		<table>
 			<tr>
 				<td>Usuario:</td>

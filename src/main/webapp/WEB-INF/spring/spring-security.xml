@@ -12,9 +12,13 @@
 		<intercept-url pattern="/" access="permitAll" />
 		<intercept-url pattern="/listar" access="hasAnyAuthority('ADMIN', 'USER')" />
 		<intercept-url pattern="/editar/*" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/api/*" access="hasAnyAuthority('ADMIN')"/>
+		<intercept-url pattern="/api/empleados/*" access="hasAnyAuthority('ADMIN')"/>
+		
 
 		<form-login login-page="/login"
-			authentication-failure-url="/error" username-parameter="username"
+			authentication-failure-url="/error" 
+			username-parameter="username"
 			password-parameter="password" />
 		<csrf disabled="true" />
 		<logout logout-success-url="/login" />
@@ -31,6 +35,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<password-encoder hash="bcrypt" />
+			
 			<jdbc-user-service data-source-ref="ds"
 				users-by-username-query="select username as username, password as password, 1 as enabled from users where username = ? "
 				authorities-by-username-query="select username as username, rol as authority from users where username = ? "

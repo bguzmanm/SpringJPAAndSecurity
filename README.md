@@ -22,4 +22,14 @@ create table users
 constraint users_pk primary key (username));
 ```
 
+## 7 de Septiembre
+Incluimos API Rest a nuestro proyecto.
+
+- POM.xml incluye librería jackson para representar objetos en formato json.
+- Creamos RestEmpleadoController.java, quien contiene los request mapping de rest.
+- Securitizamos los request con Spring Security.
+
+
+
+
 Recueda que las contraseñas deben estar encriptadas, utilza [esta herramienta](https://www.browserling.com/tools/bcrypt).
